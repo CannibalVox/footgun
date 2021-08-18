@@ -22,7 +22,7 @@ func _testConvertInt(i int) C.int {
 }
 
 func Malloc(n C.size_t) unsafe.Pointer {
-	alloc := bullet.MallocTrampoline(C.footgun_malloc, uint64(n))
+	alloc := bullet.MallocTrampoline(C.footgun_malloc, uint(n))
 	if alloc == nil {
 		panic("runtime: C malloc failed")
 	}
